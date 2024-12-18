@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <color name="purple_200">#FFBB86FC</color>-->
+<!--    <color name="purple_500">#FF6200EE</color>-->
+<!--    <color name="purple_700">#FF3700B3</color>-->
+<!--    <color name="teal_200">#FF03DAC5</color>-->
+<!--    <color name="teal_700">#FF018786</color>-->
+<!--    <color name="black">#FF000000</color>-->
+<!--    <color name="white">#FFFFFFFF</color>-->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>>
+    <!-- Warna Utama -->
+    <color name="blue">#2196F3</color> <!-- Warna biru utama untuk tombol, sesuaikan sesuai kebutuhan -->
+    <color name="blue_light">#BBDEFB</color> <!-- Warna biru terang untuk background -->
+    <color name="yellow">#FFEB3B</color> <!-- Warna kuning untuk tombol bantuan atau link -->
+    <color name="white">#FFFFFF</color> <!-- Warna putih untuk teks -->
+    <color name="yellow4">#FFD358</color>
+    <color name="yellow2">#FFEDB9</color>
+    <color name="blue2">#225580</color>
+    <color name="blue5">#3470A2</color>
+    <color name="blue1">#99D1FF</color>
+    <color name="blue6">#225580</color>
+
+
+    <!-- Warna Lainnya (Opsional) -->
+    <color name="black">#000000</color> <!-- Warna hitam untuk teks atau garis batas -->
+    <color name="grey">#9E9E9E</color> <!-- Warna abu-abu untuk teks opsional atau elemen sekunder -->
+</resources>

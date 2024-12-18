@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Mengatur radius untuk membuat ujung tombol menjadi bulat -->
+    <corners android:radius="20dp"/>
+
+    <!-- Mengatur warna latar belakang tombol -->
+    <solid android:color="@color/yellow"/> <!-- Ganti dengan warna yang sesuai -->
+
+    <!-- Jika ingin ada outline atau border -->
+    <stroke
+        android:width="0dp"
+        android:color="#3B73AF"/> <!-- Sesuaikan warna dengan kebutuhan -->
+
+</shape>

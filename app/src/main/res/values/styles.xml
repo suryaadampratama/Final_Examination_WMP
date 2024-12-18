@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BottomNavTextAppearance" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/poppins_semibold</item> <!-- Sesuaikan dengan font Anda -->
+        <item name="android:textSize">14sp</item> <!-- Opsional, sesuaikan ukuran teks -->
+    </style>
+
+    <style name="CustomBottomNavigationView" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemTextAppearanceActive">@style/BottomNavTextAppearance</item>
+        <item name="itemTextAppearanceInactive">@style/BottomNavTextAppearance</item>
+    </style>
+
+    <style name="CircularImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">15%</item> <!-- Ini akan membuat gambar menjadi bulat -->
+    </style>
+
+
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aplikasi.BantuanActivity">
+
+    <!-- ImageView untuk menampilkan gambar -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/image_bantuan1" />
+
+    <!-- Button untuk mengganti gambar -->
+    <Button
+        android:id="@+id/btnChangeImage"
+        android:layout_width="214dp"
+        android:layout_height="39dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/rounded_button_yellow"
+        android:fontFamily="@font/poppins_semibold"
+        android:backgroundTint="#FFEB3B"
+        android:text="Selanjutnya" />
+
+    <!-- Button untuk mereset gambar -->
+    <Button
+        android:id="@+id/btnResetImage"
+        android:layout_width="214dp"
+        android:layout_height="39dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/rounded_button_yellow"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Sebelumnya" />
+
+
+</FrameLayout>

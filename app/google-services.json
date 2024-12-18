@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "944615941328",
+    "project_id": "aplikasikrs-e49ce",
+    "storage_bucket": "aplikasikrs-e49ce.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944615941328:android:d7fa5fcfa6dba90796aad5",
+        "android_client_info": {
+          "package_name": "com.example.aplikasikrs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmDyeCWy_EaMqIEqr2vK_Dtzn6Rkh3JDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

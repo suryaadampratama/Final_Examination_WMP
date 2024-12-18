@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Item untuk warna solid biru -->
+    <item>
+        <shape android:shape="rectangle">
+        <solid android:color="#63ABE6"/>
+        </shape>
+    </item>
+
+    <!-- Item untuk gradien -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#63ABE6"
+                android:endColor="#FFFFFF"
+                android:angle="15" />
+        </shape>
+    </item>
+</layer-list>

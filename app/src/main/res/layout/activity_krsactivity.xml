@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/main"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_utama"
+        android:paddingBottom="30dp"
+        tools:context=".KRSActivity">
+
+        <!-- Tombol Kembali -->
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/rounded_button_yellow_krs"
+            android:drawableStart="@drawable/arrow_back"
+            android:textColor="@color/white"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="21dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="9dp"
+            android:gravity="center"/>
+
+        <!-- PENGAMBILAN KRS -->
+        <TextView
+            android:id="@+id/pengambilanKRS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="-2dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="PENGAMBILAN KRS"
+            android:textColor="@color/yellow4"
+            android:textSize="19sp"
+            app:layout_constraintStart_toEndOf="@id/back_button"
+            app:layout_constraintTop_toTopOf="@id/back_button"
+            app:layout_constraintBottom_toBottomOf="@id/back_button"/>
+
+        <!-- Garis Kuning -->
+        <View
+            android:id="@+id/yellow_line"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="20dp"
+            android:background="#FFD358"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pengambilanKRS"
+            app:layout_constraintWidth_percent="0.9" />
+
+        <!--Text Fakultas-->
+        <TextView
+            android:id="@+id/fakultas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/outfit_bold"
+            android:text="Faculty of"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/yellow_line" />
+
+        <!-- Text Prodi -->
+        <TextView
+            android:id="@+id/prodi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="@font/outfit_regular"
+            android:text="PRODI"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/fakultas" />
+
+        <!--Text Ilmu Komputer -->
+        <TextView
+            android:id="@+id/textilmukomputer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/outfit_bold"
+            android:text="Computer Science"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fakultas" />
+
+        <!-- Text Sistem Informasi -->
+        <TextView
+            android:id="@+id/sistem_informasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/outfit_regular"
+            android:text="2024"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/prodi" />
+
+        <!-- Kontainer untuk Tombol dan SKS yang Diambil -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/searchsavekrs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/sistem_informasi">
+
+            <!-- Text SKS yang Diambil -->
+            <TextView
+                android:id="@+id/totalSKSTextView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/rounded_background_yellow"
+                android:fontFamily="@font/outfit_regular"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Kontainer untuk kedua tombol -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/button_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_background_blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/totalSKSTextView"
+                app:layout_constraintWidth_percent="0.9">
+
+                <!-- Tombol Cari Matakuliah -->
+                <Button
+                    android:id="@+id/cari_matakuliah_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="0dp"
+                    android:background="@drawable/rounded_button_blue_search"
+                    android:drawableStart="@drawable/ic_search"
+                    android:drawablePadding="0dp"
+                    android:fontFamily="@font/mulish_bold"
+                    android:padding="12dp"
+                    android:text="CARI MATAKULIAH"
+                    android:textColor="@color/blue1"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/simpan_button"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.5" />
+
+                <!-- Tombol Simpan -->
+                <Button
+                    android:id="@+id/simpan_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_button_yellow_save"
+                    android:drawableEnd="@drawable/ic_download"
+                    android:padding="8dp"
+                    android:text="SIMPAN"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cari_matakuliah_button"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.4" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Kontainer untuk Spinner Semester dan Kelas -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/searchsavekrs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.9">
+
+            <!-- Spinner untuk Semester -->
+            <Spinner
+                android:id="@+id/spinner_semester"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_outline_yellow"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:entries="@array/semester_array"
+                android:textColor="@color/black"
+                android:drawableStart="@drawable/ic_dropdown"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_kelas"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintWidth_percent="0.45" />
+
+            <!-- Spinner untuk Kelas -->
+            <Spinner
+                android:id="@+id/spinner_kelas"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_outline_yellow"
+                android:padding="5dp"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:entries="@array/kelas_array"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/spinner_semester"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintWidth_percent="0.45" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- RecyclerView untuk menampilkan daftar matakuliah -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/a1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/rounded_background_blue_matakuliah"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/searchsavekrs"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="5dp">
+
+            <!-- Nama Mata Kuliah -->
+            <TextView
+                android:id="@+id/tvNamaMatkul"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/outfit_bold"
+                android:text="ROBOTICS"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Label SKS -->
+            <TextView
+                android:id="@+id/tvLabelSks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="4dp"
+                android:fontFamily="@font/outfit_bold"
+                android:text="CREDIT"
+                android:textColor="@color/blue1"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/tvNamaMatkul"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Nilai SKS -->
+            <TextView
+                android:id="@+id/tvSksValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/outfit_bold"
+                android:text="3"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvLabelSks"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelSks"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelSks" />
+
+            <!-- Label Kelas -->
+            <TextView
+                android:id="@+id/tvLabelKelas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/outfit_bold"
+                android:text="INTERNSHIP"
+                android:textColor="@color/blue1"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/tvLabelSks"
+                app:layout_constraintTop_toTopOf="@+id/tvLabelSks" />
+
+            <!-- Nilai Kelas -->
+            <TextView
+                android:id="@+id/tvKelasValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/outfit_bold"
+                android:text="1"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvLabelKelas"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelKelas"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelKelas" />
+
+            <!-- Icon Checkbox -->
+            <android.widget.CheckBox
+                android:id="@+id/ivCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ivDropdown"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Icon Dropdown -->
+            <ImageView
+                android:id="@+id/ivDropdown"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="3dp"
+                android:src="@drawable/ic_dropdown"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/a2"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/rounded_background_blue_matakuliah"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/a1"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp">
+
+            <!-- Nama Mata Kuliah -->
+            <TextView
+                android:id="@+id/tvNamaMatkul1"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="NUMERICAL METHOD"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Label SKS -->
+            <TextView
+                android:id="@+id/tvLabelSks1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CREDIT"
+                android:textSize="14sp"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@color/blue1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvNamaMatkul1"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="0dp" />
+
+            <!-- Nilai SKS -->
+            <TextView
+                android:id="@+id/tvSksValue1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="3"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelSks1"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelSks1"
+                app:layout_constraintEnd_toEndOf="@+id/tvLabelSks1"
+                android:layout_marginTop="0dp" />
+
+            <!-- Label Kelas -->
+            <TextView
+                android:id="@+id/tvLabelKelas1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INTERNSHIP"
+                android:textSize="14sp"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@color/blue1"
+                app:layout_constraintTop_toTopOf="@+id/tvLabelSks1"
+                app:layout_constraintStart_toEndOf="@+id/tvLabelSks1"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="0dp" />
+
+            <!-- Nilai Kelas -->
+            <TextView
+                android:id="@+id/tvKelasValue1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="1"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelKelas1"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelKelas1"
+                app:layout_constraintEnd_toEndOf="@+id/tvLabelKelas1"
+                android:layout_marginTop="0dp" />
+
+            <!-- Icon Checkbox -->
+            <android.widget.CheckBox
+                android:id="@+id/ivCheckbox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ivDropdown1"/>
+
+            <!-- Icon Dropdown -->
+            <ImageView
+                android:id="@+id/ivDropdown1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_dropdown"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="3dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/a3"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/rounded_background_blue_matakuliah"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/a2"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp">
+
+            <!-- Nama Mata Kuliah -->
+            <TextView
+                android:id="@+id/tvNamaMatkul3"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="MOBILE PROGRAMMING"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Label SKS -->
+            <TextView
+                android:id="@+id/tvLabelSks3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CREDIT"
+                android:textSize="14sp"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@color/blue1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvNamaMatkul3"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="0dp" />
+
+            <!-- Nilai SKS -->
+            <TextView
+                android:id="@+id/tvSksValue3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="3"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelSks3"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelSks3"
+                app:layout_constraintEnd_toEndOf="@+id/tvLabelSks3"
+                android:layout_marginTop="0dp" />
+
+            <!-- Label Kelas -->
+            <TextView
+                android:id="@+id/tvLabelKelas3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INTERNSHIP"
+                android:textSize="14sp"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@color/blue1"
+                app:layout_constraintTop_toTopOf="@+id/tvLabelSks3"
+                app:layout_constraintStart_toEndOf="@+id/tvLabelSks3"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="0dp" />
+
+            <!-- Nilai Kelas -->
+            <TextView
+                android:id="@+id/tvKelasValue3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="1"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelKelas3"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelKelas3"
+                app:layout_constraintEnd_toEndOf="@+id/tvLabelKelas3"
+                android:layout_marginTop="0dp" />
+
+            <!-- Icon Checkbox -->
+            <android.widget.CheckBox
+                android:id="@+id/ivCheckbox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ivDropdown3"/>
+
+            <!-- Icon Dropdown -->
+            <ImageView
+                android:id="@+id/ivDropdown3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_dropdown"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="3dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/a4"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/rounded_background_blue_matakuliah"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/a3"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp">
+
+            <!-- Nama Mata Kuliah -->
+            <TextView
+                android:id="@+id/tvNamaMatkul4"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="SOFT ENGINEERING"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Label SKS -->
+            <TextView
+                android:id="@+id/tvLabelSks4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CREDIT"
+                android:textSize="14sp"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@color/blue1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvNamaMatkul4"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="0dp" />
+
+            <!-- Nilai SKS -->
+            <TextView
+                android:id="@+id/tvSksValue4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="3"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelSks4"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelSks4"
+                app:layout_constraintEnd_toEndOf="@+id/tvLabelSks4"
+                android:layout_marginTop="0dp" />
+
+            <!-- Label Kelas -->
+            <TextView
+                android:id="@+id/tvLabelKelas4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INTERNSHIP"
+                android:textSize="14sp"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@color/blue1"
+                app:layout_constraintTop_toTopOf="@+id/tvLabelSks4"
+                app:layout_constraintStart_toEndOf="@+id/tvLabelSks4"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="0dp" />
+
+            <!-- Nilai Kelas -->
+            <TextView
+                android:id="@+id/tvKelasValue4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="1"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelKelas4"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelKelas4"
+                app:layout_constraintEnd_toEndOf="@+id/tvLabelKelas4"
+                android:layout_marginTop="0dp" />
+
+            <!-- Icon Checkbox -->
+            <android.widget.CheckBox
+                android:id="@+id/ivCheckbox4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ivDropdown4"/>
+
+            <!-- Icon Dropdown -->
+            <ImageView
+                android:id="@+id/ivDropdown4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_dropdown"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="3dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/a5"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/rounded_background_blue_matakuliah"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/a4"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp">
+
+            <!-- Nama Mata Kuliah -->
+            <TextView
+                android:id="@+id/tvNamaMatkul5"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="NETWORK SECURITY"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Label SKS -->
+            <TextView
+                android:id="@+id/tvLabelSks5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CREDIT"
+                android:textSize="14sp"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@color/blue1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvNamaMatkul5"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="0dp" />
+
+            <!-- Nilai SKS -->
+            <TextView
+                android:id="@+id/tvSksValue5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="3"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelSks5"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelSks5"
+                app:layout_constraintEnd_toEndOf="@+id/tvLabelSks5"
+                android:layout_marginTop="0dp" />
+
+            <!-- Label Kelas -->
+            <TextView
+                android:id="@+id/tvLabelKelas5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INTERNSHIP"
+                android:textSize="14sp"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@color/blue1"
+                app:layout_constraintTop_toTopOf="@+id/tvLabelSks5"
+                app:layout_constraintStart_toEndOf="@+id/tvLabelSks5"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="0dp" />
+
+            <!-- Nilai Kelas -->
+            <TextView
+                android:id="@+id/tvKelasValue5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="1"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelKelas5"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelKelas5"
+                app:layout_constraintEnd_toEndOf="@+id/tvLabelKelas5"
+                android:layout_marginTop="0dp" />
+
+            <!-- Icon Checkbox -->
+            <android.widget.CheckBox
+                android:id="@+id/ivCheckbox5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ivDropdown5"/>
+
+            <!-- Icon Dropdown -->
+            <ImageView
+                android:id="@+id/ivDropdown5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_dropdown"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="3dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/a6"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/rounded_background_blue_matakuliah"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/a5"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp">
+
+            <!-- Nama Mata Kuliah -->
+            <TextView
+                android:id="@+id/tvNamaMatkul6"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="ARTIFICAL INTELLIGENCE"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Label SKS -->
+            <TextView
+                android:id="@+id/tvLabelSks6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CREDIT"
+                android:textSize="14sp"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@color/blue1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvNamaMatkul6"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="0dp" />
+
+            <!-- Nilai SKS -->
+            <TextView
+                android:id="@+id/tvSksValue6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="3"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelSks6"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelSks6"
+                app:layout_constraintEnd_toEndOf="@+id/tvLabelSks6"
+                android:layout_marginTop="0dp" />
+
+            <!-- Label Kelas -->
+            <TextView
+                android:id="@+id/tvLabelKelas6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INTERNSHIP"
+                android:textSize="14sp"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@color/blue1"
+                app:layout_constraintTop_toTopOf="@+id/tvLabelSks6"
+                app:layout_constraintStart_toEndOf="@+id/tvLabelSks6"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="0dp" />
+
+            <!-- Nilai Kelas -->
+            <TextView
+                android:id="@+id/tvKelasValue6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="1"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelKelas6"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelKelas6"
+                app:layout_constraintEnd_toEndOf="@+id/tvLabelKelas6"
+                android:layout_marginTop="0dp" />
+
+            <!-- Icon Checkbox -->
+            <android.widget.CheckBox
+                android:id="@+id/ivCheckbox6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ivDropdown6"/>
+
+            <!-- Icon Dropdown -->
+            <ImageView
+                android:id="@+id/ivDropdown6"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_dropdown"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="3dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/a7"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/rounded_background_blue_matakuliah"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/a6"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp">
+
+            <!-- Nama Mata Kuliah -->
+            <TextView
+                android:id="@+id/tvNamaMatkul7"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="DATABASE"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Label SKS -->
+            <TextView
+                android:id="@+id/tvLabelSks7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CREDIT"
+                android:textSize="14sp"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@color/blue1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvNamaMatkul7"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="0dp" />
+
+            <!-- Nilai SKS -->
+            <TextView
+                android:id="@+id/tvSksValue7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="3"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelSks7"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelSks7"
+                app:layout_constraintEnd_toEndOf="@+id/tvLabelSks7"
+                android:layout_marginTop="0dp" />
+
+            <!-- Label Kelas -->
+            <TextView
+                android:id="@+id/tvLabelKelas7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INTERNSHIP"
+                android:textSize="14sp"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@color/blue1"
+                app:layout_constraintTop_toTopOf="@+id/tvLabelSks7"
+                app:layout_constraintStart_toEndOf="@+id/tvLabelSks7"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="0dp" />
+
+            <!-- Nilai Kelas -->
+            <TextView
+                android:id="@+id/tvKelasValue7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="1"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelKelas7"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelKelas7"
+                app:layout_constraintEnd_toEndOf="@+id/tvLabelKelas7"
+                android:layout_marginTop="0dp" />
+
+            <!-- Icon Checkbox -->
+            <android.widget.CheckBox
+                android:id="@+id/ivCheckbox7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ivDropdown7"/>
+
+            <!-- Icon Dropdown -->
+            <ImageView
+                android:id="@+id/ivDropdown7"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_dropdown"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="3dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/a8"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/rounded_background_blue_matakuliah"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/a7"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp">
+
+            <!-- Nama Mata Kuliah -->
+            <TextView
+                android:id="@+id/tvNamaMatkul8"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="3D COMPUTER GRAPHICS"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Label SKS -->
+            <TextView
+                android:id="@+id/tvLabelSks8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CREDIT"
+                android:textSize="14sp"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@color/blue1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvNamaMatkul8"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="0dp" />
+
+            <!-- Nilai SKS -->
+            <TextView
+                android:id="@+id/tvSksValue8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="3"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelSks8"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelSks8"
+                app:layout_constraintEnd_toEndOf="@+id/tvLabelSks8"
+                android:layout_marginTop="0dp" />
+
+            <!-- Label Kelas -->
+            <TextView
+                android:id="@+id/tvLabelKelas8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INTERNSHIP"
+                android:textSize="14sp"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@color/blue1"
+                app:layout_constraintTop_toTopOf="@+id/tvLabelSks8"
+                app:layout_constraintStart_toEndOf="@+id/tvLabelSks8"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="0dp" />
+
+            <!-- Nilai Kelas -->
+            <TextView
+                android:id="@+id/tvKelasValue8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="1"
+                android:fontFamily="@font/outfit_bold"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelKelas8"
+                app:layout_constraintStart_toStartOf="@+id/tvLabelKelas8"
+                app:layout_constraintEnd_toEndOf="@+id/tvLabelKelas8"
+                android:layout_marginTop="0dp" />
+
+            <!-- Icon Checkbox -->
+            <android.widget.CheckBox
+                android:id="@+id/ivCheckbox8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ivDropdown8"/>
+
+            <!-- Icon Dropdown -->
+            <ImageView
+                android:id="@+id/ivDropdown8"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_dropdown"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="3dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+
+

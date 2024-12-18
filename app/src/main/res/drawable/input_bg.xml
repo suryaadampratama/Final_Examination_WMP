@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Mengatur radius untuk membuat ujung menjadi bulat -->
+    <corners android:radius="10dp" /> <!-- Radius sesuai permintaan, 10dp -->
+
+    <!-- Mengatur warna latar belakang dengan transparansi -->
+    <solid android:color="#e8e8e8" /> <!-- Warna hitam dengan transparansi 70% -->
+
+    <!-- Jika ingin ada outline atau border, bisa ditambahkan stroke -->
+    <stroke
+        android:width="0dp"
+        android:color="#e8e8e8"/> <!-- Border opsional, bisa disesuaikan -->
+</shape>

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">AplikasiKRS</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string-array name="semester_array">
+        <item>Semester ▼</item> <!-- Placeholder -->
+        <item>Semester 1</item>
+        <item>Semester 2</item>
+        <item>Semester 3</item>
+        <!-- Tambahkan semester lainnya -->
+    </string-array>
+
+    <string-array name="kelas_array">
+        <item>Internship ▼</item>
+        <item>Internship 1</item>
+        <item>Internship 2</item>
+        <item>Internship 3</item>
+        <!-- Tambah item lain sesuai kebutuhan -->
+    </string-array>
+</resources>
+
+
